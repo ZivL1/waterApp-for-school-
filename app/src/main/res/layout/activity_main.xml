@@ -7,13 +7,117 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Hello World!"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tTitleInsertInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="אנא הכנס את המידע:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <TextView
+        android:id="@+id/tName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="שם:"
+        android:textSize="20sp"
+        android:layout_marginLeft="200sp"
+        android:layout_marginTop="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tTitleInsertInfo" />
+
+    <TextView
+        android:id="@+id/tGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מגדר:"
+        android:textSize="20sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="200sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tName" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="3sp"
+        app:layout_constraintEnd_toStartOf="@+id/tName"
+        app:layout_constraintTop_toBottomOf="@+id/tTitleInsertInfo" />
+
+    <RadioGroup
+        android:id="@+id/rChooseGender"
+        android:layout_width="25dp"
+        android:layout_marginRight="7sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tGender"
+        app:layout_constraintTop_toBottomOf="@+id/etName">
+
+        <RadioButton
+            android:id="@+id/rMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tMale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="זכר"
+        android:layout_marginRight="3sp"
+        android:layout_marginTop="10sp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/rChooseGender"
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
+    <TextView
+        android:id="@id/tFemale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="נקבה"
+        android:layout_marginRight="3sp"
+        android:layout_marginTop="19sp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/rChooseGender"
+        app:layout_constraintTop_toBottomOf="@+id/tMale" />
+    <TextView
+        android:id="@+id/tOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="אחר"
+        android:layout_marginRight="3sp"
+        android:layout_marginTop="19sp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/rChooseGender"
+        app:layout_constraintTop_toBottomOf="@+id/tFemale" />
+
+    <Button
+        android:id="@+id/bFinishStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="סיום"
+        android:layout_marginTop="100sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rChooseGender" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
