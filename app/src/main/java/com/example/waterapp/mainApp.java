@@ -26,9 +26,19 @@ public class mainApp extends AppCompatActivity {
                 if (result.getResultCode() == RESULT_OK) {
                     Intent data = result.getData();
                     if (data != null) {
-                        int waterAdded = data.getIntExtra("waterAdded", 0);
+                        double waterAdded = data.getDoubleExtra("waterAdded", 0.0);
                         SharedPreferences.Editor editor = sp.edit();
                         editor.putString("waterCount", String.valueOf(waterAdded));
+                        editor.commit();
+                        if(sp.getString("gender","male").equals("other")) {
+                            tHowMuchWater.setText("כמה מים ששתיתם היום:");
+                            tWaterCount.setText(sp.getString("waterCount","0") + "/"+"3.7L");
+                        }else if(sp.getString("gender","male").equals("female"))
+                        {
+                            tWaterCount.setText(sp.getString("waterCount","0") + "/"+"2.7L");
+                        }else{
+                            tWaterCount.setText(sp.getString("waterCount","0") + "/"+"3.7L");
+                        }
                     }
                 }
             }
@@ -73,5 +83,8 @@ public class mainApp extends AppCompatActivity {
         tWaterCount = findViewById(R.id.tWaterCount);
         sp = getSharedPreferences("details",0);
         bAddWater = findViewById(R.id.bAddWater);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("waterCount","0.0");
+        editor.commit();
     }
 }

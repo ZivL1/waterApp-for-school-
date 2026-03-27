@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/bAddMl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="מיליליטרים"
@@ -28,6 +29,7 @@
         android:layout_marginTop="50dp"/>
 
     <Button
+        android:id="@+id/bAddBottle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="בחר בקבוק"

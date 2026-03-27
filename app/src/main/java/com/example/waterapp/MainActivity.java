@@ -65,8 +65,12 @@ public class MainActivity extends AppCompatActivity {
                     sGender = "other";
                 }
                 editor.putString("gender",sGender);
+                editor.putString("waterCount","0.0");
                 editor.commit();
                 }
+                Intent intent = new Intent(MainActivity.this, mainApp.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
