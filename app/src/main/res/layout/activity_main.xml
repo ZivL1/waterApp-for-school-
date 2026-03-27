@@ -26,8 +26,8 @@
         android:layout_height="wrap_content"
         android:text="שם:"
         android:textSize="20sp"
-        android:layout_marginLeft="200sp"
-        android:layout_marginTop="30sp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tTitleInsertInfo" />
@@ -38,8 +38,8 @@
         android:layout_height="wrap_content"
         android:text="מגדר:"
         android:textSize="20sp"
-        android:layout_marginTop="10sp"
-        android:layout_marginLeft="200sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tName" />
@@ -50,15 +50,15 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:layout_marginTop="15sp"
-        android:layout_marginRight="3sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="3dp"
         app:layout_constraintEnd_toStartOf="@+id/tName"
         app:layout_constraintTop_toBottomOf="@+id/tTitleInsertInfo" />
 
     <RadioGroup
         android:id="@+id/rChooseGender"
         android:layout_width="25dp"
-        android:layout_marginRight="7sp"
+        android:layout_marginRight="7dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@+id/tGender"
         app:layout_constraintTop_toBottomOf="@+id/etName">
@@ -84,8 +84,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="זכר"
-        android:layout_marginRight="3sp"
-        android:layout_marginTop="10sp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="10dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/rChooseGender"
         app:layout_constraintTop_toBottomOf="@+id/etName" />
@@ -94,8 +94,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="נקבה"
-        android:layout_marginRight="3sp"
-        android:layout_marginTop="19sp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="19dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/rChooseGender"
         app:layout_constraintTop_toBottomOf="@+id/tMale" />
@@ -104,8 +104,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="אחר"
-        android:layout_marginRight="3sp"
-        android:layout_marginTop="19sp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="19dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/rChooseGender"
         app:layout_constraintTop_toBottomOf="@+id/tFemale" />
@@ -115,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="סיום"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rChooseGender" />

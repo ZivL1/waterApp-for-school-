@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WaterApp">
         <activity
+            android:name=".AddWaterActivity"
+            android:exported="false" />
+        <activity
             android:name=".mainApp"
             android:exported="false" />
         <activity

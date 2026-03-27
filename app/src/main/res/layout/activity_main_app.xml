@@ -7,4 +7,47 @@
     android:layout_height="match_parent"
     tools:context=".mainApp">
 
+    <TextView
+        android:id="@+id/tHello"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        android:textSize="30sp"
+        android:text="שלום"/>
+
+    <TextView
+        android:id="@+id/tHowMuchWater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="כמות המים ששתית היום:"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tHello" />
+
+    <TextView
+        android:id="@+id/tWaterCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/x.3L"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tHowMuchWater" />
+
+    <Button
+        android:id="@+id/bAddWater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="הוספת מים"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tWaterCount" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
