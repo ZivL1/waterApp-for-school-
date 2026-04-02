@@ -8,8 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -18,10 +21,27 @@ import androidx.core.view.WindowInsetsCompat;
 public class AddWaterActivity extends AppCompatActivity {
     SharedPreferences sp;
     TextView tHowToAddWater;
-    Button bAddMl, bAddBottle, bSureAddMl, bCancleMl;
+    Button bAddMl, bAddBottle, bSureAddMl, bCancleMl, bReturn;
     Dialog addMl;
     SeekBar ml;
     int waterToAdd = 0;
+    ActivityResultLauncher<Intent> launcher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    Intent data = result.getData();
+                    if (data != null) {
+                        double dWaterToAdd = data.getDoubleExtra("waterAdded",0);
+                        double currentWater = Double.parseDouble(sp.getString("waterCount", "0"));
+                        double newWaterAmount = currentWater + dWaterToAdd/1000;
+                        Intent intent = new Intent();
+                        intent.putExtra("waterAdded",newWaterAmount);
+                        setResult(RESULT_OK,intent);
+                        finish();
+                    }
+                }
+            }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +72,25 @@ public class AddWaterActivity extends AppCompatActivity {
                 createMlDialog();
             }
         });
+        bReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        bAddBottle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddWaterActivity.this, ChooseBottleActivity.class);
+                launcher.launch(intent);
+            }
+        });
     }
 
     private void initviews() {
         bAddMl = findViewById(R.id.bAddMl);
         bAddBottle = findViewById(R.id.bAddBottle);
+        bReturn = findViewById(R.id.bReturn);
     }
 
     private void createMlDialog(){
@@ -78,7 +112,7 @@ public class AddWaterActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                Toast.makeText(AddWaterActivity.this, "water to add: " + waterToAdd + "ml", Toast.LENGTH_SHORT).show();
             }
         });
         bSureAddMl = addMl.findViewById(R.id.bSureAddMl);
