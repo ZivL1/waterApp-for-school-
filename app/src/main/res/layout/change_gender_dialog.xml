@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tChangeGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מגדר:"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="60dp"/>
+    <RadioGroup
+        android:id="@+id/rChangeChooseGender"
+        android:layout_width="25dp"
+        android:layout_marginRight="7dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toStartOf="@+id/tChangeGender"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rChangeMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rChangeFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rChangeOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tChangeMale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="זכר"
+        android:textSize="20sp"
+        android:layout_marginTop="107dp"
+        app:layout_constraintEnd_toStartOf="@+id/rChangeChooseGender"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tChangeFemale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="נקבה"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="22dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/rChangeChooseGender"
+        app:layout_constraintTop_toBottomOf="@+id/tChangeMale" />
+    <TextView
+        android:id="@+id/tChangeOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="אחר"
+        android:layout_marginTop="19dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/rChangeChooseGender"
+        app:layout_constraintTop_toBottomOf="@+id/tChangeFemale" />
+
+    <Button
+        android:id="@+id/bFinishChangeGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="סיום"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rChangeChooseGender"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="25dp"/>
+
+    <Button
+        android:id="@+id/bCancleChangeGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ביטול"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rChangeChooseGender"
+        android:layout_marginRight="75dp"
+        android:layout_marginTop="25dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

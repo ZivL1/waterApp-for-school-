@@ -3,6 +3,8 @@ package com.example.waterapp;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +17,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.text.SimpleDateFormat;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     Button btn;
@@ -40,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, mainApp.class);
             startActivity(intent);
             finish();
+        }else {
+
         }
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,15 +75,20 @@ public class MainActivity extends AppCompatActivity {
                     sGender = "other";
                 }
                 editor.putString("gender",sGender);
-                editor.putString("waterCount","0.0");
                 editor.commit();
                 }
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("waterCount","0.0");
+                editor.putString("lastWaterCount","0.0");
+                editor.putString("lastDate",  new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));
+                editor.commit();
                 Intent intent = new Intent(MainActivity.this, mainApp.class);
                 startActivity(intent);
                 finish();
             }
         });
     }
+
 
     private void initViews() {
         btn = findViewById(R.id.bFinishStart);
