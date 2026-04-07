@@ -17,10 +17,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.appbar.MaterialToolbar;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import androidx.appcompat.widget.Toolbar;
 
 public class mainApp extends AppCompatActivity {
     TextView tHello,tHowMuchWater,tWaterCount,tWaterCountYesterday,tHowMuchWaterYesterday;
@@ -58,9 +59,8 @@ public class mainApp extends AppCompatActivity {
         initviews();
         checkDailyReset();
         setTexts();
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
 
         EdgeToEdge.enable(this);
@@ -123,6 +123,11 @@ public class mainApp extends AppCompatActivity {
         }
     }
 
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+    }
+
     public boolean onOptionsItemSelected(MenuItem item){
         super.onOptionsItemSelected(item);
         int id = item.getItemId();
@@ -138,8 +143,4 @@ public class mainApp extends AppCompatActivity {
         return true;
     }
 
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_main,menu);
-        return true;
-    }
 }

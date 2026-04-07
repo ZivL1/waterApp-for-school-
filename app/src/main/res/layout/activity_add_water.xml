@@ -32,7 +32,7 @@
         android:id="@+id/bAddBottle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="בחר בקבוק"
+        android:text="בקבוק"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="75dp"
         app:layout_constraintStart_toStartOf="parent"

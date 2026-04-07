@@ -15,9 +15,12 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.appbar.MaterialToolbar;
 
 public class ChangeDetails extends AppCompatActivity {
     SharedPreferences sp;
@@ -29,9 +32,12 @@ public class ChangeDetails extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_change_details);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        EdgeToEdge.enable(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -104,7 +110,7 @@ public class ChangeDetails extends AppCompatActivity {
                 {
                     Toast.makeText(ChangeDetails.this, "תבחר מגדר לשנות", Toast.LENGTH_SHORT).show();
                 }else {
-                    gender = findViewById(id);
+                    gender = changeGender.findViewById(id);
                     String sGender = "";
                     if (gender.getId() == R.id.rChangeMale) {
                         sGender = "male";
@@ -127,6 +133,12 @@ public class ChangeDetails extends AppCompatActivity {
         bChangeName = findViewById(R.id.bChangeName);
         sp = getSharedPreferences("details",0);
     }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+    }
+
     public boolean onOptionsItemSelected(MenuItem item){
         super.onOptionsItemSelected(item);
         int id = item.getItemId();
@@ -142,8 +154,4 @@ public class ChangeDetails extends AppCompatActivity {
         return true;
     }
 
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_main,menu);
-        return true;
-    }
 }
