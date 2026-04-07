@@ -19,14 +19,14 @@
 
     <TextView
         android:id="@+id/tHello"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
+        android:layout_width="244dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="100dp"
+        android:text="שלום"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp"
-        android:textSize="30sp"
-        android:text="שלום"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tHowMuchWater"

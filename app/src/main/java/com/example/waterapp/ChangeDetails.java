@@ -74,6 +74,7 @@ public class ChangeDetails extends AppCompatActivity {
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("name", name);
                     editor.commit();
+                    Toast.makeText(ChangeDetails.this, "changed name to " + name, Toast.LENGTH_SHORT).show();
                     changeName.dismiss();
                 }
             }
@@ -122,6 +123,7 @@ public class ChangeDetails extends AppCompatActivity {
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("gender",sGender);
                     editor.commit();
+                    Toast.makeText(ChangeDetails.this, "changed gender to " + sGender, Toast.LENGTH_SHORT).show();
                     changeGender.dismiss();
                 }
             }
